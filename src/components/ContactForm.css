@@ -17,7 +17,6 @@
 .ContactForm form {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .input-container {
@@ -70,7 +69,40 @@
 
 @media screen and (min-width: 800px) {
 
-    
+    .ContactForm {
+        padding: 40px 20px;
+        width: 70%;
+    }
+
+    .form-title {
+        font-size: 45px;
+    }
+
+    .input-container {
+        margin: 20px 5px;
+    }
+
+    .input-container label {
+        top: -24px;
+        font-size: 18px;
+    }
+
+    .checkbox-container label {
+        top: 5px;
+        left: 45px;
+        font-size: 18px;
+        width: 300px;
+    }
+
+    .input-container input {
+        width: 400px;
+    }
+
+    .checkbox-container input {
+        width: 30px;
+        height: 30px;
+        margin: 0;
+    }
 
     .form-btns {
         flex-direction: row;
