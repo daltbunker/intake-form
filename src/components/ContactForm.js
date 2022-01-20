@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, {useState} from 'react'
+import './ContactForm.css'
 
 function ContactForm() {
 
@@ -42,10 +43,10 @@ function ContactForm() {
 
     return(
         <div className="ContactForm">
-            <h2>Contact Us</h2>
+            <div className="form-title">Contact Us</div>
             <form onSubmit={(e) => handleFormSubmit(e)}>
                 <div className="input-container">
-                    <label>Name</label>
+                    <label>Name:</label>
                     <input 
                         type="text" 
                         name="name" 
@@ -55,7 +56,7 @@ function ContactForm() {
                     />
                 </div>
                 <div className="input-container">
-                    <label>Email</label>
+                    <label>Email:</label>
                     <input 
                         type="email" 
                         name="email" 
@@ -66,7 +67,7 @@ function ContactForm() {
                     />
                 </div>
                 <div className="input-container">
-                    <label>Birthdate</label>
+                    <label>Birthdate:</label>
                     <input 
                         type="date" 
                         name="birthdate" 
@@ -74,8 +75,8 @@ function ContactForm() {
                         onChange={(e) => handleInputChange(e)} 
                     />
                 </div>
-                <div className="input-container">
-                    <label>I agree to be contacted via email</label>
+                <div className="input-container checkbox-container">
+                    <label id="checkbox-label">I agree to be contacted via email</label>
                     <input 
                         type="checkbox" 
                         name="emailConsent" 
@@ -84,8 +85,10 @@ function ContactForm() {
                         required 
                     />
                 </div>
-                <button className="form-btn">SUBMIT</button>
-                <button className="form-btn" onClick={clearForm} type="button">CLEAR</button>
+                <div className="form-btns">
+                    <button className="form-btn">SUBMIT</button>
+                    <button className="form-btn" onClick={clearForm} type="button">CLEAR</button>
+                </div>
             </form>
         </div>
     )
