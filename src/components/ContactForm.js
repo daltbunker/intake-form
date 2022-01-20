@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, {useState} from 'react'
 
 function ContactForm() {
@@ -6,7 +7,7 @@ function ContactForm() {
         name: "",
         email: "",
         birthdate: "",
-        contactAgreement: false
+        emailConsent: false
     }
 
     const [formInput, setFormInput] = useState(defaultFormInput)
@@ -16,13 +17,27 @@ function ContactForm() {
         setFormInput(prevFormInput => {
             return {
                 ...prevFormInput,
-                [name]: name === "contactAgreement" ? checked : value
+                [name]: name === "emailConsent" ? checked : value
             }
         })
     }
 
     function handleFormSubmit(e) {
         e.preventDefault()
+        const randomId = Math.floor(Math.random * 100000)
+        const userData = {
+            id: randomId,
+            ...formInput
+        }
+        axios.post("https://my-json-server.typicode.com/JustUtahCoders/interview-users-api/users", userData)
+            .then(() => alert("Your message was successfully sent, we will get back to you shortly!"))
+            .catch(() => alert("Sorry, something went wrong. Please try again.")) 
+
+        clearForm()
+    }
+
+    function clearForm() {
+        setFormInput(defaultFormInput)
     }
 
     return(
@@ -63,14 +78,14 @@ function ContactForm() {
                     <label>I agree to be contacted via email</label>
                     <input 
                         type="checkbox" 
-                        name="contactAgreement" 
-                        value={formInput.contactAgreement} 
+                        name="emailConsent" 
+                        value={formInput.emailConsent} 
                         onChange={(e) => handleInputChange(e)} 
                         required 
                     />
                 </div>
                 <button className="form-btn">SUBMIT</button>
-                <button className="form-btn">CLEAR</button>
+                <button className="form-btn" onClick={clearForm} type="button">CLEAR</button>
             </form>
         </div>
     )
