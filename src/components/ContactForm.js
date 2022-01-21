@@ -80,7 +80,7 @@ function ContactForm() {
                     <input 
                         type="checkbox" 
                         name="emailConsent" 
-                        value={formInput.emailConsent} 
+                        checked={formInput.emailConsent} 
                         onChange={(e) => handleInputChange(e)} 
                         required 
                     />
