@@ -73,7 +73,7 @@ function ContactForm() {
                         onChange={(e) => handleInputChange(e)} 
                     />
                 </InputContainer>
-                <InputContainer label="I agree to be contacted via email" class="checkbox-container">
+                <InputContainer label="I agree to be contacted via email">
                     <input 
                         type="checkbox" 
                         name="emailConsent" 
