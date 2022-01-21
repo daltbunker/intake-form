@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, {useState} from 'react'
 import './ContactForm.css'
+import InputContainer from './InputContainer'
 
 function ContactForm() {
 
@@ -45,8 +46,7 @@ function ContactForm() {
         <div className="ContactForm">
             <div className="form-title">Contact Us</div>
             <form onSubmit={(e) => handleFormSubmit(e)}>
-                <div className="input-container">
-                    <label>Name:</label>
+                <InputContainer label="Name">
                     <input 
                         type="text" 
                         name="name" 
@@ -54,29 +54,26 @@ function ContactForm() {
                         onChange={(e) => handleInputChange(e)} 
                         required 
                     />
-                </div>
-                <div className="input-container">
-                    <label>Email:</label>
-                    <input 
-                        type="email" 
-                        name="email" 
-                        value={formInput.email} 
-                        onChange={(e) => handleInputChange(e)} 
-                        pattern=".+@.+\.[A-Za-z]{2,4}" 
-                        required 
-                    />
-                </div>
-                <div className="input-container">
-                    <label>Birthdate:</label>
+                </InputContainer>
+                <InputContainer label="Email">
+                        <input 
+                            type="email" 
+                            name="email" 
+                            value={formInput.email} 
+                            onChange={(e) => handleInputChange(e)} 
+                            pattern=".+@.+\.[A-Za-z]{2,4}" 
+                            required 
+                        />
+                </InputContainer>
+                <InputContainer label="Birthdate">
                     <input 
                         type="date" 
                         name="birthdate" 
                         value={formInput.birthdate} 
                         onChange={(e) => handleInputChange(e)} 
                     />
-                </div>
-                <div className="input-container checkbox-container">
-                    <label id="checkbox-label">I agree to be contacted via email</label>
+                </InputContainer>
+                <InputContainer label="I agree to be contacted via email" class="checkbox-container">
                     <input 
                         type="checkbox" 
                         name="emailConsent" 
@@ -84,7 +81,7 @@ function ContactForm() {
                         onChange={(e) => handleInputChange(e)} 
                         required 
                     />
-                </div>
+                </InputContainer>
                 <div className="form-btns">
                     <button className="form-btn">SUBMIT</button>
                     <button className="form-btn" onClick={clearForm} type="button">CLEAR</button>

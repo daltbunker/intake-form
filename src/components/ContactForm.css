@@ -19,34 +19,6 @@
     flex-direction: column;
 }
 
-.input-container {
-    position: relative;
-    margin: 15px 5px;
-}
-
-.input-container label {
-    position: absolute;
-    top: -20px;
-}
-
-.checkbox-container label {
-    top: 10px;
-    left: 36px;
-    font-size: 11px;
-    width: 200px;
-}
-
-.input-container input {
-    height: 30px;
-    width: 200px;
-}
-
-.checkbox-container input {
-    width: 30px;
-    height: 30px;
-    margin: 0;
-}
-
 .form-btns {
     display: flex;
     flex-direction: column;
@@ -76,32 +48,6 @@
 
     .form-title {
         font-size: 45px;
-    }
-
-    .input-container {
-        margin: 20px 5px;
-    }
-
-    .input-container label {
-        top: -24px;
-        font-size: 18px;
-    }
-
-    .checkbox-container label {
-        top: 5px;
-        left: 45px;
-        font-size: 18px;
-        width: 300px;
-    }
-
-    .input-container input {
-        width: 400px;
-    }
-
-    .checkbox-container input {
-        width: 30px;
-        height: 30px;
-        margin: 0;
     }
 
     .form-btns {

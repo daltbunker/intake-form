@@ -1,0 +1,60 @@
+.InputContainer {
+    position: relative;
+    margin: 15px 5px;
+}
+
+.InputContainer label {
+    position: absolute;
+    top: -20px;
+}
+
+/* checkbox */
+.InputContainer:nth-child(4) label {
+    top: 10px;
+    left: 36px;
+    font-size: 11px;
+    width: 200px;
+}
+
+.InputContainer input {
+    height: 30px;
+    width: 200px;
+}
+
+/* checkbox */
+.InputContainer:nth-child(4) input {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+}
+
+@media screen and (min-width: 800px) {
+
+    .InputContainer {
+        margin: 20px 5px;
+    }
+
+    .InputContainer label {
+        top: -24px;
+        font-size: 18px;
+    }
+
+    /* checkbox */
+    .InputContainer:nth-child(4) label {
+        top: 5px;
+        left: 45px;
+        font-size: 18px;
+        width: 300px;
+    }
+
+    .InputContainer input {
+        width: 400px;
+    }
+
+    /* checkbox */
+    .InputContainer:nth-child(4) input {
+        width: 30px;
+        height: 30px;
+        margin: 0;
+    }
+}
